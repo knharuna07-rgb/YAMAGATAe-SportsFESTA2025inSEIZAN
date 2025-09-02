@@ -1,319 +1,4 @@
 <!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>やまがたeスポーツフェスタ2025 in SEIZAN</title>
-    <style>
-        /* --- 全体のスタイル --- */
-        body {
-            font-family: 'Helvetica Neue', 'Arial', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Meiryo', sans-serif;
-            margin: 0;
-            color: #333;
-            /* 背景色を元の白っぽい色に戻しました */
-            background-color: #f9f9f9;
-        }
-
-        /* --- ヘッダー（ナビゲーション） --- */
-        header {
-            background-color: #003366;
-            color: white;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-sizing: border-box;
-        }
-        header .logo { font-size: 1.5em; font-weight: bold; }
-        header nav a { color: white; text-decoration: none; margin-left: 20px; font-weight: bold; }
-        header nav a:hover { text-decoration: underline; }
-
-        /* --- メインコンテンツ --- */
-        main {
-            padding-top: 60px;
-        }
-
-        /* --- トップのヒーローセクション --- */
-        .hero {
-            /* ★★★ メイン画像を正しい書き方で指定 ★★★ */
-            background-image: url('やまがたeスポーツフェスタ-2025-in-SEIZAN.jpg');
-            background-size: cover;
-            background-position: center;
-            height: 60vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-        }
-        .hero-content { background-color: rgba(0, 0, 0, 0.6); padding: 30px; border-radius: 10px; }
-        .hero h1 { font-size: 3em; margin: 0; }
-        .hero p { font-size: 1.2em; margin-top: 10px; }
-
-        /* --- 各セクションの共通スタイル --- */
-        .section {
-            padding: 60px 20px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        .section-title {
-            text-align: center;
-            font-size: 2.5em;
-            margin-bottom: 40px;
-            color: #003366;
-            border-bottom: 3px solid #003366;
-            padding-bottom: 10px;
-            display: inline-block;
-        }
-        .section-title-wrapper { text-align: center; margin-bottom: 40px; }
-
-        /* --- カードレイアウト --- */
-        .card-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
-        .card {
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            overflow: hidden;
-            width: 300px;
-            text-align: left;
-            transition: transform 0.3s;
-        }
-        .card:hover { transform: translateY(-5px); }
-        .card img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-        }
-        .card-content { padding: 20px; }
-        .card-title { font-size: 1.5em; margin-top: 0; margin-bottom: 10px; color: #003366; }
-        .card-text { font-size: 0.9em; line-height: 1.6; }
-
-        /* --- スポンサーロゴのスタイル --- */
-        .logo-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 30px;
-            margin-top: 30px;
-            flex-wrap: wrap;
-        }
-        .logo-container img {
-            max-height: 80px;
-            max-width: 200px;
-        }
-        .logo-container p {
-            font-size: 1.2em;
-            font-weight: bold;
-        }
-        .sub-section-title {
-            text-align: center;
-            font-size: 1.5em;
-            color: #555;
-            margin-top: 40px;
-        }
-
-        /* --- フッター --- */
-        footer {
-            /* 背景色を指定の #e83f59 に変更しました */
-            background-color: #e83f59;
-            color: white;
-            text-align: center;
-            padding: 30px 20px;
-        }
-        .contact-info {
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-        
-        /* --- スマートフォン対応 --- */
-        @media (max-width: 768px) {
-            header nav { display: none; }
-            .hero h1 { font-size: 2em; }
-            .section-title { font-size: 2em; }
-            .card { width: 90%; }
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <div class="logo">SEIZAN e-Festa 2025</div>
-        <nav>
-            <a href="#info">開催概要</a>
-            <a href="#contents">内容</a>
-            <a href="#sponsors">協力</a>
-            <a href="#contact">お問合せ</a>
-        </nav>
-    </header>
-
-    <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h1>やまがたeスポーツフェスタ2025</h1>
-                <p>in SEIZAN</p>
-            </div>
-        </section>
-
-        <section id="info" class="section">
-            <div class="section-title-wrapper">
-                <h2 class="section-title">開催概要</h2>
-            </div>
-            <p style="text-align:center; font-size: 1.2em; line-height: 2;">
-                <strong>日時:</strong> 2025年11月2日(日) 10:30 - 15:00<br>
-                <strong>場所:</strong> 惺山高等学校 第1体育館・第2体育館<br>
-                <strong>入場料:</strong> 無料<br>
-                <span style="font-weight: bold; color: #d9534f;">優勝賞金あり！初心者・飛び入り参戦、大歓迎！</span>
-            </p>
-        </section>
-        
-        <section id="contents" class="section" style="background-color: #fff;">
-            <div class="section-title-wrapper">
-                <h2 class="section-title">イベント内容</h2>
-            </div>
-            <div class="card-container">
-                <div class="card">
-                    <img src="Beta Key Art_VALORANT.jpg" alt="VALORANT大会">
-                    <div class="card-content">
-                        <h3 class="card-title">中高生VALORANT大会</h3>
-                        <p class="card-text">中学生・高校生を対象としたVALORANT大会を開催！仲間と力を合わせ、頂点を目指せ！</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <!-- ★★★ ストリートファイター6の画像を指定 ★★★ -->
-                    <img src="SF6_Official_Keyart_16x9_Horizontal (1).png" alt="ストリートファイター6 体験">
-                    <div class="card-content">
-                        <h3 class="card-title">ストリートファイター6 体験</h3>
-                        <p class="card-text">最新の格闘ゲームを体験しよう！ベテランから初心者まで、誰でも気軽に対戦を楽しめます。</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="IMG_1087.JPG" alt="ぷよぷよeスポーツ 体験">
-                    <div class="card-content">
-                        <h3 class="card-title">ぷよぷよeスポーツ 体験</h3>
-                        <p class="card-text">国民的パズルゲームで連鎖の爽快感を味わおう！世代を問わずみんなで盛り上がれます。</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="IMG_1058.JPG" alt="山形大学VR部 体験">
-                    <div class="card-content">
-                        <h3 class="card-title">山形大学VR部 体験ブース</h3>
-                        <p class="card-text">VRの世界へようこそ！普段は味わえない非日常の体験が君を待っている！</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="sponsors" class="section">
-            <div class="section-title-wrapper">
-                <h2 class="section-title">ご協力・ご後援</h2>
-            </div>
-            <h3 class="sub-section-title">スポンサー</h3>
-            <div class="logo-container">
-                <!-- ★★★ サードウェーブ社のロゴ画像を指定 ★★★ -->
-                <img src="Thirdwave_Logo.png" alt="サードウェーブ社">
-                <img src="og.jpg" alt="すらら">
-            </div>
-            <h3 class="sub-section-title">後援</h3>
-            <div class="logo-container">
-                <p>山形市</p>
-                <p>TUYテレビユー山形</p>
-            </div>
-        </section>
-    </main>
-    
-    <footer id="contact">
-        <div class="contact-info">
-            <h3>お問合せ</h3>
-            <p>
-                惺山高等学校e-Sports部 eスポーツフェスタ 生徒実行委員会<br>
-                〒990-0832 山形県山形市城西３丁目１３－７<br>
-                代表TEL: 023-643-021
-            </p>
-        </div>
-        <p>&copy; 2025 やまがたeスポーツフェスタ実行委員会 (惺山高等学校)</p>
-    </footer>
-
-</body>
-</html>            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
-        .card {
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            overflow: hidden;
-            width: 300px; /* カードの幅 */
-            text-align: left; /* テキストを左揃えに */
-            transition: transform 0.3s;
-        }
-        .card:hover { transform: translateY(-5px); }
-        .card img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-        }
-        .card-content { padding: 20px; }
-        .card-title { font-size: 1.5em; margin-top: 0; margin-bottom: 10px; color: #003366; }
-        .card-text { font-size: 0.9em; line-height: 1.6; }
-
-        /* --- スポンサーロゴのスタイル --- */
-        .logo-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 30px;
-            margin-top: 30px;
-            flex-wrap: wrap;
-        }
-        .logo-container img {
-            max-height: 80px; /* ロゴの高さを揃える */
-            max-width: 200px;
-        }
-        .logo-container p {
-            font-size: 1.2em;
-            font-weight: bold;
-        }
-        .sub-section-title {
-            text-align: center;
-            font-size: 1.5em;
-            color: #555;
-            margin-top: 40px;
-        }
-
-
-        /* --- フッター --- */
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 30px 20px;
-        }
-        .contact-info {
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-        
-        /* --- スマートフォン対応（変更なし） --- */
-        @media (max-width: 768px) {
-            header nav { display: none; }
-            .hero h1 { font-size: 2em; }
-            .section-title { font-size: 2em; }
-            .card { width: 90%; }
-        }
-    </style>
-</head>
-<body>
-
     <!-- ==================== ヘッダー ==================== -->
     <header>
         <div class="logo">SEIZAN e-Festa 2025</div>
@@ -331,6 +16,8 @@
             <div class="hero-content">
                 <h1>やまがたeスポーツフェスタ2025</h1>
                 <p>in SEIZAN</p>
+                 <img src="やまがたeスポーツフェスタ-2025-in-SEIZAN.jpg">
+
             </div>
         </section>
 
@@ -426,7 +113,7 @@
     </footer>
 
 </body>
-</html>            background-color: #e83f59;
+</html>       <!--     background-color: #e83f59;
             padding: 30px;
             border-radius: 10px;
         }
@@ -511,7 +198,7 @@
             .section-title {
                 font-size: 2em;
             }
-        }
+        }-->
     </style>
 </head>
 <body>
@@ -542,8 +229,8 @@
                 <h2 class="section-title">開催情報</h2>
             </div>
             <p style="text-align:center; font-size: 1.2em;">
-                <strong>日時:</strong> 2025年 XX月 XX日 (土) 10:00 - 17:00<br>
-                <strong>場所:</strong> 惺山高等学校 体育館<br>
+                <strong>日時:</strong> 2025年 11月 2日 (日) 10:30 - 15:00<br>
+                <strong>場所:</strong> 惺山高等学校 ２階　第１体育館・第２体育館<br>
                 <strong>入場料:</strong> 無料<br>
                 <strong>主催:</strong> 惺山高等学校 e-Sports部
             </p>
@@ -600,12 +287,9 @@
             <div class="section-title-wrapper">
                 <h2 class="section-title">Special Thanks</h2>
             </div>
-            <p style="text-align: center;">本イベントは以下の企業・団体の皆様にご協力いただいております。</p>
+            <p style="text-align: center;">多くのの企業・団体の皆様にご協力いただいております。</p>
             <div style="display: flex; justify-content: center; gap: 20px; margin-top: 30px; flex-wrap: wrap;">
                 <!-- ここにスポンサーのロゴ画像を並べます -->
-                <img src="https://via.placeholder.com/150x80?text=Sponsor+A" alt="スポンサーA社">
-                <img src="https://via.placeholder.com/150x80?text=Sponsor+B" alt="スポンサーB社">
-                <img src="https://via.placeholder.com/150x80?text=Sponsor+C" alt="スポンサーC社">
             </div>
         </section>
     </main>
