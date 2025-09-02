@@ -34,25 +34,22 @@
 
         /* --- メインコンテンツ --- */
         main {
+            /* ヘッダー分の高さを確保 */
             padding-top: 60px;
         }
 
-        /* --- トップのヒーローセクション --- */
-        .hero {
-            /* ★★★ メイン画像を正しい書き方で指定 ★★★ */
-            background-image: url('やまがたeスポーツフェスタ-2025-in-SEIZAN案２.jpg');
-            background-size: cover;
-            background-position: center;
-            height: 60vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
+        /* --- ★★★ 新しいメイン画像セクションのスタイル ★★★ --- */
+        .main-visual {
+            /* ヘッダーの高さ分の隙間ができてしまうのを防ぐため、ネガティブマージンで調整 */
+            margin-top: -60px;
+            line-height: 0; /* 画像の下にできる余分な隙間を消す */
         }
-        .hero-content { background-color: rgba(0, 0, 0, 0.6); padding: 30px; border-radius: 10px; }
-        .hero h1 { font-size: 3em; margin: 0; }
-        .hero p { font-size: 1.2em; margin-top: 10px; }
+        .main-visual img {
+            /* PCでの表示（デフォルト） */
+            width: 100%; /* 横幅は画面いっぱいに */
+            height: auto; /* 高さは自動で比率を維持 */
+        }
+
 
         /* --- 各セクションの共通スタイル --- */
         .section {
@@ -134,17 +131,41 @@
             margin-bottom: 20px;
         }
         
-        /* --- スマートフォン対応 --- */
+      /* --- ★★★ スマートフォン対応 ★★★ --- */
         @media (max-width: 768px) {
             header nav { display: none; }
-            .hero h1 { font-size: 2em; }
             .section-title { font-size: 2em; }
             .card { width: 90%; }
+
+            /* スマホで見た時だけ、メイン画像を画面の高さぴったりにする */
+            .main-visual img {
+                height: 100vh; /* vh = viewport height (画面の高さ) */
+                width: 100%;
+                /* 画像が引き伸ばされないように、いい感じにトリミングする設定 */
+                object-fit: cover;
+            }
         }
     </style>
 </head>
 <body>
 
+    <header>
+        <div class="logo">SEIZAN e-Festa 2025</div>
+        <nav>
+            <a href="#info">開催概要</a>
+            <a href="#contents">内容</a>
+            <a href="#sponsors">協力</a>
+            <a href="#contact">お問合せ</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ==================== ★★★ メイン画像をここに変更 ★★★ ==================== -->
+        <!-- 以前の .hero セクションを削除し、新しい .main-visual セクションに置き換え -->
+        <section class="main-visual">
+            <img src="やまがｔeスポーツフェスタ-2025-in-SEIZAN案２.jpg" alt="やまがたeスポーツフェスタ2025 メインビジュアル">
+        </section>
+        
     <header>
         <div class="logo">SEIZAN e-Festa 2025</div>
         <nav>
