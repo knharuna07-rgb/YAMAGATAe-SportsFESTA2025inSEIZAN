@@ -10,7 +10,6 @@
             font-family: 'Helvetica Neue', 'Arial', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Meiryo', sans-serif;
             margin: 0;
             color: #333;
-            /* 背景色を元の白っぽい色に戻しました */
             background-color: #f9f9f9;
         }
 
@@ -49,7 +48,6 @@
             width: 100%; /* 横幅は画面いっぱいに */
             height: auto; /* 高さは自動で比率を維持 */
         }
-
 
         /* --- 各セクションの共通スタイル --- */
         .section {
@@ -107,10 +105,7 @@
             max-height: 80px;
             max-width: 200px;
         }
-        .logo-container p {
-            font-size: 1.2em;
-            font-weight: bold;
-        }
+        .logo-container p { font-size: 1.2em; font-weight: bold; }
         .sub-section-title {
             text-align: center;
             font-size: 1.5em;
@@ -120,7 +115,6 @@
 
         /* --- フッター --- */
         footer {
-            /* 背景色を指定の #e83f59 に変更しました */
             background-color: #e83f59;
             color: white;
             text-align: center;
@@ -131,7 +125,7 @@
             margin-bottom: 20px;
         }
         
-      /* --- ★★★ スマートフォン対応 ★★★ --- */
+        /* --- ★★★ スマートフォン対応 ★★★ --- */
         @media (max-width: 768px) {
             header nav { display: none; }
             .section-title { font-size: 2em; }
@@ -163,27 +157,10 @@
         <!-- ==================== ★★★ メイン画像をここに変更 ★★★ ==================== -->
         <!-- 以前の .hero セクションを削除し、新しい .main-visual セクションに置き換え -->
         <section class="main-visual">
-            <img src="やまがｔeスポーツフェスタ-2025-in-SEIZAN案２.jpg" alt="やまがたeスポーツフェスタ2025 メインビジュアル">
-        </section>
-        
-    <header>
-        <div class="logo">SEIZAN e-Festa 2025</div>
-        <nav>
-            <a href="#info">開催概要</a>
-            <a href="#contents">内容</a>
-            <a href="#sponsors">協力</a>
-            <a href="#contact">お問合せ</a>
-        </nav>
-    </header>
-
-    <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h1>やまがたeスポーツフェスタ2025</h1>
-                <p>in SEIZAN</p>
-            </div>
+            <img src="やまがたeスポーツフェスタ-2025-in-SEIZAN案２.jpg" alt="やまがたeスポーツフェスタ2025 メインビジュアル">
         </section>
 
+        <!-- ==================== 開催概要セクション ==================== -->
         <section id="info" class="section">
             <div class="section-title-wrapper">
                 <h2 class="section-title">開催概要</h2>
@@ -196,6 +173,7 @@
             </p>
         </section>
         
+        <!-- ==================== 内容セクション ==================== -->
         <section id="contents" class="section" style="background-color: #fff;">
             <div class="section-title-wrapper">
                 <h2 class="section-title">イベント内容</h2>
@@ -209,7 +187,6 @@
                     </div>
                 </div>
                 <div class="card">
-                    <!-- ★★★ ストリートファイター6の画像を指定 ★★★ -->
                     <img src="SF6_Official_Keyart_16x9_Horizontal (1).png" alt="ストリートファイター6 体験">
                     <div class="card-content">
                         <h3 class="card-title">ストリートファイター6 体験</h3>
@@ -233,14 +210,14 @@
             </div>
         </section>
 
+        <!-- ==================== スポンサー・協力会社 ==================== -->
         <section id="sponsors" class="section">
             <div class="section-title-wrapper">
                 <h2 class="section-title">ご協力・ご後援</h2>
             </div>
             <h3 class="sub-section-title">スポンサー</h3>
             <div class="logo-container">
-                <!-- ★★★ サードウェーブ社のロゴ画像を指定 ★★★ -->
-                <img src="Thirdwave-Logo.png" alt="サードウェーブ社">
+                <img src="Thirdwave_Logo.png" alt="サードウェーブ社">
                 <img src="og.jpg" alt="すらら">
             </div>
             <h3 class="sub-section-title">後援</h3>
@@ -251,13 +228,14 @@
         </section>
     </main>
     
+    <!-- ==================== フッター（お問合せ） ==================== -->
     <footer id="contact">
         <div class="contact-info">
             <h3>お問合せ</h3>
             <p>
                 惺山高等学校e-Sports部 eスポーツフェスタ 生徒実行委員会<br>
                 〒990-0832 山形県山形市城西３丁目１３－７<br>
-                代表TEL: 023-643-021
+                代表TEL: 023-643-0321
             </p>
         </div>
         <p>&copy; 2025 やまがたeスポーツフェスタ実行委員会 (惺山高等学校)</p>
