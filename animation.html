@@ -22,15 +22,6 @@
         header .logo { font-size: 1.5em; font-weight: bold; }
         header nav a { color: white; text-decoration: none; margin-left: 20px; font-weight: bold; }
         header nav a:hover { text-decoration: underline; }
-   
-    </header>
-
-    <main>
-        <section class="main-visual">
-            <img src="やまがたeスポーツフェスタ-2025-in-SEIZAN案3.jpg" alt="やまがたeスポーツフェスタ2025 メインビジュアル">
-        </section>
-
-        <section id="info" class="section">
 
         /* --- メインコンテンツ --- */
         main { padding-top: 60px; }
@@ -123,7 +114,12 @@
     <div id="loader"><p>YAMAGATA e-Sports Festa 2025 in SEIZAN</p></div>
     <header>...</header>
     <main>
-        <section class="main-visual">...</section>
+        <section class="main-visual"></section>
+        
+        <section class="main-visual">
+            <!-- ここの src="main-visual.jpg" をあなたの画像ファイル名に書き換えてください -->
+            <img src="やまがたeスポーツフェスタ-2025-in-SEIZAN案3.jpg" alt="やまがたeスポーツフェスタ2025 メインビジュアル">
+        </section>
 
         <!-- ★★★ 開催概要セクション ★★★ -->
         <section id="info" class="section">
@@ -139,7 +135,7 @@
                 <div class="info-item fade-in">
                     <p class="info-highlight">
                         優勝賞金あり！
-                        <small>初心者・一般参加者飛び入り参戦 大歓迎！</small>
+                        <small>初心者・飛び入り参戦、大歓迎！</small>
                     </p>
                 </div>
             </div>
@@ -156,22 +152,47 @@
             </div>
         </section>
 
+         <section id="sponsors" class="section fade-in">
+            <div class="section-title-wrapper">
+                <h2 class="section-title typing-anim" data-text="ご協力・ご後援"></h2>
+            </div>
+            <h3 class="sub-section-title">スポンサー</h3>
+            
+            <!-- ↓↓↓ この <div class="logo-container"> の中にロゴ画像を入れます ↓↓↓ -->
+            <div class="logo-container">
+                <!-- サードウェーブ社のロゴ -->
+                <img src="Thirdwave_Logo.png" alt="サードウェーブ社">
+                
+                <!-- すららのロゴ（現在は仮の画像になっています） -->
+                <img src="og.jpg" alt="すらら">
+                
+                <!-- スポンサーが3社以上いる場合は、ここに<img>タグを追加します -->
+                <!-- <img src="sponsor-c-logo.png" alt="C社"> -->
+            </div>
+            
+            <h3 class="sub-section-title">後援</h3>
+            <div class="logo-container">
+                <p>山形市</p>
+                <p>TUYテレビユー山形</p>
+            </div>
+        </section>
+
         <!-- ★★★ ここから各コンテンツの詳細ページ用セクション ★★★ -->
         <section id="valorant-details" class="details-section fade-in">
             <h2>VALORANT 大会 詳細</h2>
-            <p style="text-align: center;">ここにVALORANT大会の詳細なルール、参加資格、エントリー方法などを記載予定</p>
+            <p style="text-align: center;">ここにVALORANT大会の詳細なルール、参加資格、エントリー方法などを記載します。</p>
         </section>
         <section id="sf6-details" class="details-section fade-in">
             <h2>Street Fighter 6 体験 詳細</h2>
-            <p style="text-align: center;">ここにスト6体験コーナーでできること、使用できるキャラクター、初心者講習会の時間などを記載予定</p>
+            <p style="text-align: center;">ここにスト6体験コーナーでできること、使用できるキャラクター、初心者講習会の時間などを記載します。</p>
         </section>
         <section id="puyo-details" class="details-section fade-in">
              <h2>ぷよぷよeスポーツ 体験 詳細</h2>
-            <p style="text-align: center;">ここにぷよぷよ体験コーナーの詳細などを記載予定</p>
+            <p style="text-align: center;">ここにぷよぷよ体験コーナーの詳細などを記載します。</p>
         </section>
         <section id="vr-details" class="details-section fade-in">
             <h2>山形大学VR部 体験 詳細</h2>
-            <p style="text-align: center;">ここにVR体験の詳細などを記載予定</p>
+            <p style="text-align: center;">ここにVR体験の詳細などを記載します。</p>
         </section>
 
         <section id="sponsors" class="section fade-in">...</section>
