@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>やまがたeスポーツフェスタ2025 in SEIZAN</title>
+    <style>
+        /* --- 全体のスタイル --- */
+        body {
+            font-family: 'Helvetica Neue', 'Arial', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Meiryo', sans-serif;
+            margin: 0;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        /* --- ★★★ ローディング画面のスタイル ★★★ --- */
+        #loader {
+            position: fixed; /* 画面に固定 */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #003366; /* 惺山高校のテーマカラー */
+            z-index: 9999; /* 最も手前に表示 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 2em;
+            font-weight: bold;
+            transition: opacity 0.8s ease-out; /* 0.8秒かけてフワッと消える */
+        }
+        
+        /* JavaScriptでこのクラスを追加するとローダーが消える */
+        #loader.hidden {
+            opacity: 0;
+            pointer-events: none; /* クリックなどを無効化 */
+        }
+
+        /* --- ヘッダー（ナビゲーション） --- */
+        header {
+            background-color: #003366;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-sizing: border-box;
+        }
+        header .logo { font-size: 1.5em; font-weight: bold; }
+        header nav a { color: white; text-decoration: none; margin-left: 20px; font-weight: bold; }
+        header nav a:hover { text-decoration: underline; }
+
+        /* --- メインコンテンツ --- */
+        main {
+            padding-top: 60px;
+        }
+
+        /* --- メイン画像セクション --- */
+        .main-visual {
+            margin-top: -60px;
+            line-height: 0;
+        }
+        .main-visual img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* --- ★★★ スクロールアニメーションのスタイル ★★★ --- */
+        .fade-in {
+            opacity: 0; /* 最初は透明 */
+            transform: translateY(30px); /* 少し下に配置 */
+            transition: opacity 0.8s, transform 0.8s; /* 0.8秒かけてアニメーション */
+        }
+        /* JavaScriptでこのクラスを追加すると要素が表示される */
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- 各セクションの共通スタイル --- */
+        .section {
+            padding: 80px 20px; /* 少し余白を広げる */
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            color: #003366;
+            border-bottom: 3px solid #003366;
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+        .section-title-wrapper { text-align: center; margin-bottom: 40px; }
+
+        /* --- カードレイアウト --- */
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+            width: 300px;
+            text-align: left;
+            transition: transform 0.3s;
+        }
+        .card:hover { transform: translateY(-5px); }
+        .card img { width: 100%; height: 180px; object-fit: cover; }
+        .card-content { padding: 20px; }
+        .card-title { font-size: 1.5em; margin-top: 0; margin-bottom: 10px; color: #003366; }
+        .card-text { font-size: 0.9em; line-height: 1.6; }
+
+        /* --- スポンサーロゴのスタイル --- */
+        .logo-container { display: flex; justify-content: center; align-items: center; gap: 30px; margin-top: 30px; flex-wrap: wrap; }
+        .logo-container img { max-height: 80px; max-width: 200px; }
+        .logo-container p { font-size: 1.2em; font-weight: bold; }
+        .sub-section-title { text-align: center; font-size: 1.5em; color: #555; margin-top: 40px; }
+
+        /* --- フッター --- */
+        footer {
+            background-color: #e83f59;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+        .contact-info { line-height: 1.8; margin-bottom: 20px; }
+        
+        /* --- スマートフォン対応 --- */
+        @media (max-width: 768px) {
+            header nav { display: none; }
+            .section-title { font-size: 2em; }
+            .card { width: 90%; }
+            .main-visual img { height: 100vh; width: 100%; object-fit: cover; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==================== ★★★ ローディング画面 ★★★ ==================== -->
+    <div id="loader">
+        <p>SEIZAN e-Festa 2025</p>
+    </div>
+
+    <header>
+        <div class="logo">SEIZAN e-Festa 2025</div>
+        <nav>
+            <a href="#info">開催概要</a>
+            <a href="#contents">内容</a>
+            <a href="#sponsors">協力</a>
+            <a href="#contact">お問合せ</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="main-visual">
+            <img src="main-visual.jpg" alt="やまがたeスポーツフェスタ2025 メインビジュアル">
+        </section>
+
+        <!-- ★★★ fade-inクラスを追加 ★★★ -->
+        <section id="info" class="section fade-in">
+            <div class="section-title-wrapper">
+                <h2 class="section-title">開催概要</h2>
+            </div>
+            <p style="text-align:center; font-size: 1.2em; line-height: 2;">
+                <strong>日時:</strong> 2025年11月2日(日) 10:30 - 15:00<br>
+                <strong>場所:</strong> 惺山高等学校 第1体育館・第2体育館<br>
+                <strong>入場料:</strong> 無料<br>
+                <span style="font-weight: bold; color: #d9534f;">優勝賞金あり！初心者・飛び入り参戦、大歓迎！</span>
+            </p>
+        </section>
+        
+        <!-- ★★★ fade-inクラスを追加 ★★★ -->
+        <section id="contents" class="section fade-in" style="background-color: #fff;">
+            <div class="section-title-wrapper">
+                <h2 class="section-title">イベント内容</h2>
+            </div>
+            <div class="card-container">
+                 <!-- カードにもfade-inクラスを追加 -->
+                <div class="card fade-in">
+                    <img src="https://via.placeholder.com/300x180/BD3944/FFFFFF?text=VALORANT" alt="VALORANT大会">
+                    <div class="card-content">
+                        <h3 class="card-title">中高生VALORANT大会</h3>
+                        <p class="card-text">中学生・高校生を対象としたVALORANT大会を開催！仲間と力を合わせ、頂点を目指せ！</p>
+                    </div>
+                </div>
+                <div class="card fade-in">
+                    <img src="street-fighter-6.jpg" alt="ストリートファイター6 体験">
+                    <div class="card-content">
+                        <h3 class="card-title">ストリートファイター6 体験</h3>
+                        <p class="card-text">最新の格闘ゲームを体験しよう！ベテランから初心者まで、誰でも気軽に対戦を楽しめます。</p>
+                    </div>
+                </div>
+                <div class="card fade-in">
+                    <img src="https://via.placeholder.com/300x180/F6D000/000000?text=Puyo+Puyo" alt="ぷよぷよeスポーツ 体験">
+                    <div class="card-content">
+                        <h3 class="card-title">ぷよぷよeスポーツ 体験</h3>
+                        <p class="card-text">国民的パズルゲームで連鎖の爽快感を味わおう！世代を問わずみんなで盛り上がれます。</p>
+                    </div>
+                </div>
+                <div class="card fade-in">
+                    <img src="https://via.placeholder.com/300x180/7444C0/FFFFFF?text=VR+Experience" alt="山形大学VR部 体験">
+                    <div class="card-content">
+                        <h3 class="card-title">山形大学VR部 体験ブース</h3>
+                        <p class="card-text">VRの世界へようこそ！普段は味わえない非日常の体験が君を待っている！</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ★★★ fade-inクラスを追加 ★★★ -->
+        <section id="sponsors" class="section fade-in">
+            <div class="section-title-wrapper">
+                <h2 class="section-title">ご協力・ご後援</h2>
+            </div>
+            <h3 class="sub-section-title">スポンサー</h3>
+            <div class="logo-container">
+                <img src="thirdwave-logo.png" alt="サードウェーブ社">
+                <img src="https://via.placeholder.com/200x80?text=すらら" alt="すらら">
+            </div>
+            <h3 class="sub-section-title">後援</h3>
+            <div class="logo-container">
+                <p>山形市</p>
+                <p>TUYテレビユー山形</p>
+            </div>
+        </section>
+    </main>
+    
+    <footer id="contact">
+        <div class="contact-info">
+            <h3>お問合せ</h3>
+            <p>
+                惺山高等学校e-Sports部 eスポーツフェスタ 生徒実行委員会<br>
+                〒990-0832 山形県山形市城西３丁目１３－７<br>
+                代表TEL: 023-643-0321
+            </p>
+        </div>
+        <p>&copy; 2025 やまがたeスポーツフェスタ実行委員会 (惺山高等学校)</p>
+    </footer>
+
+    <!-- ==================== ★★★ JavaScriptコード ★★★ ==================== -->
+    <script>
+        // --- ローディング画面の処理 ---
+        window.addEventListener('load', function() {
+            const loader = document.getElementById('loader');
+            // 1.5秒後にローダーを消す
+            setTimeout(function() {
+                loader.classList.add('hidden');
+            }, 1500); // 1500ミリ秒 = 1.5秒
+        });
+
+        // --- スクロールアニメーションの処理 ---
+        // 監視対象となるすべての.fade-inクラスを持つ要素を取得
+        const targets = document.querySelectorAll('.fade-in');
+
+        // 要素が画面に入ったかどうかを判定するオブザーバーを作成
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                // isIntersectingがtrueなら、要素が画面内に入ったということ
+                if (entry.isIntersecting) {
+                    // visibleクラスを追加してアニメーションを発動
+                    entry.target.classList.add('visible');
+                    // 一度表示されたら、もう監視する必要はないので解除
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+
+        // 各ターゲット要素の監視を開始
+        targets.forEach(target => {
+            observer.observe(target);
+        });
+    </script>
+
+</body>
+</html> 
