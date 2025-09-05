@@ -37,7 +37,6 @@
         .info-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
         .info-item { text-align: center; padding: 20px; }
         .info-item h3 { font-size: 1.2em; color: var(--text-secondary); margin: 0 0 10px 0; letter-spacing: 2px; }
-        /* ★★★ 日時の文字サイズを調整 ★★★ */
         .info-item p { font-size: 2.5em; line-height: 1.4; margin: 0; font-weight: bold; }
         .prize-section { padding: 60px 20px; background-color: var(--content-bg); text-align: center; }
         .prize-text { font-size: 2.5em; font-weight: bold; color: var(--accent-pink); letter-spacing: 2px; }
@@ -49,18 +48,14 @@
         .card-content { padding: 25px; }
         .card-title { font-size: 1.8em; margin: 0 0 10px 0; color: var(--text-primary); }
         .card-text { font-size: 1em; line-height: 1.6; color: var(--text-secondary); }
-
-        /* ★★★ モーダルウィンドウのスタイルを更新 ★★★ */
         .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 2000; display: flex; justify-content: center; align-items: center; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
         .modal-overlay.active { opacity: 1; pointer-events: auto; }
         .modal-content { background-color: var(--content-bg); border-radius: 10px; width: 90%; max-width: 800px; max-height: 80vh; padding: 40px; overflow-y: auto; transform: scale(0.95); transition: transform 0.3s; }
         .modal-overlay.active .modal-content { transform: scale(1); }
         .modal-close { position: absolute; top: 20px; right: 20px; font-size: 2em; color: white; cursor: pointer; border: none; background: none; }
-        .modal-title { font-size: 2.5em; margin-top: 0; min-height: 1.2em; /* タイピング中のガタつき防止 */ }
-        /* タイトル色を指定のピンクに */
+        .modal-title { font-size: 2.5em; margin-top: 0; min-height: 1.2em; }
         .modal-title span { color: var(--accent-pink); }
         .modal-title.typing::after { content: '|'; animation: blink 1s step-end infinite; color: var(--accent-pink); }
-
         #sponsors { background-color: var(--content-bg); }
         .logo-container { display: flex; justify-content: center; align-items: center; gap: 40px; margin-top: 30px; flex-wrap: wrap; }
         .logo-container img { max-height: 60px; max-width: 180px; filter: brightness(0) invert(1) opacity(0.7); transition: 0.3s; }
@@ -80,9 +75,8 @@
         }
     </style>
 </head>
-<body>
-    <div id="loader">...</div>
-    <header>...</header>
+
+<!-- ★★★ ここからが修正したHTMLの本体です ★★★ -->
 <body>
     <div id="loader"><p>YAMAGATA e-Sports Festa 2025 in SEIZAN</p></div>
 
@@ -95,9 +89,6 @@
         <section class="main-visual">
             <img src="やまがたeスポーツフェスタ-2025-in-SEIZAN案8.jpg" alt="やまがたeスポーツフェスタ2025 メインビジュアル">
         </section>
-
-    <main>
-        <section class="main-visual">...</section>
 
         <section id="info" class="section">
             <div class="info-grid fade-in">
@@ -120,25 +111,50 @@
                 <div class="card fade-in" data-modal="vr-modal"><img src="IMG_1058.JPG" alt="山形大学VR部 体験"><div class="card-content"><h3 class="card-title">山形大学VR部 体験</h3><p class="card-text">非日常の世界へ。最新のVRコンテンツを体験！</p></div></div>
             </div>
         </section>
-
-        <section id="sponsors">...</section>
+        
+        <section id="sponsors">
+            <div class="section-title-wrapper"><h2 class="section-title"><span>SPONSORS & SUPPORTERS</span></h2></div>
+            <h3 class="sub-section-title">SPONSORS</h3>
+            <div class="logo-container">
+                <img src="Thirdwave_Logo.png" alt="サードウェーブ社">
+                <img src="og.jpg" alt="すらら">
+            </div>
+            <h3 class="sub-section-title">SUPPORTERS</h3>
+            <div class="logo-container">
+                <p>山形市</p>
+                <p>TUYテレビユー山形</p>
+            </div>
+        </section>
     </main>
     
-    <footer>...</footer>
-    <div class="marquee">...</div>
+    <footer id="contact">
+        <div class="contact-info">
+            <h3>CONTACT</h3>
+            <p>惺山高等学校e-Sports部 eスポーツフェスタ 生徒実行委員会<br>〒990-0832 山形市城西３丁目１３－７<br>代表TEL: 023-643-0321</p>
+        </div>
+        <p>&copy; 2025 やまがたeスポーツフェスタ実行委員会</p>
+    </footer>
 
-    <!-- ★★★ モーダル内のタイトルをspanで囲いました ★★★ -->
+    <div class="marquee">
+        <div class="marquee-inner">
+            <span>YAMAGATA e-Sports Festa 2025.11.2sun</span><span>YAMAGATA e-Sports Festa 2025.11.2sun</span>
+            <span>YAMAGATA e-Sports Festa 2025.11.2sun</span><span>YAMAGATA e-Sports Festa 2025.11.2sun</span>
+        </div>
+    </div>
+
     <div id="valorant-modal" class="modal-overlay"><div class="modal-content"><button class="modal-close">&times;</button><h2 class="modal-title" data-text-container><span>VALORANT 大会 詳細</span></h2><p>ここにVALORANT大会の詳細なルール、参加資格、エントリー方法などを記載します。</p></div></div>
     <div id="sf6-modal" class="modal-overlay"><div class="modal-content"><button class="modal-close">&times;</button><h2 class="modal-title" data-text-container><span>Street Fighter 6 体験 詳細</span></h2><p>ここにスト6体験コーナーでできること、使用できるキャラクター、初心者講習会の時間などを記載します。</p></div></div>
     <div id="puyo-modal" class="modal-overlay"><div class="modal-content"><button class="modal-close">&times;</button><h2 class="modal-title" data-text-container><span>ぷよぷよeスポーツ 体験 詳細</span></h2><p>ここにぷよぷよ体験コーナーの詳細などを記載します。</p></div></div>
     <div id="vr-modal" class="modal-overlay"><div class="modal-content"><button class="modal-close">&times;</button><h2 class="modal-title" data-text-container><span>山形大学VR部 体験 詳細</span></h2><p>ここにVR体験の詳細などを記載します。</p></div></div>
 
     <script>
-        window.addEventListener('load', () => { /* ... */ });
-
-        // ★★★ タイピングアニメーションを汎用的に変更 ★★★
+        window.addEventListener('load', () => {
+            document.getElementById('loader').classList.add('hidden');
+            document.querySelector('.main-visual').classList.add('visible');
+        });
         const typeAnimation = (element) => {
             const targetSpan = element.querySelector('span');
+            if (!targetSpan) return;
             const text = targetSpan.textContent;
             targetSpan.innerHTML = '';
             element.classList.add('typing');
@@ -151,38 +167,33 @@
                     clearInterval(timer);
                     element.classList.remove('typing');
                 }
-            }, 100); // 少し速くしました
+            }, 100);
         };
-
         const cards = document.querySelectorAll('.card');
         cards.forEach(card => {
             card.addEventListener('click', () => {
                 const modalId = card.dataset.modal;
                 const modal = document.getElementById(modalId);
                 modal.classList.add('active');
-                
-                // ★★★ モーダル表示時にタイピング開始 ★★★
                 const modalTitle = modal.querySelector('.modal-title');
                 if (modalTitle) {
                     typeAnimation(modalTitle);
                 }
             });
         });
-
         const closeButtons = document.querySelectorAll('.modal-close, .modal-overlay');
         closeButtons.forEach(btn => {
             btn.addEventListener('click', (e) => {
                 if (e.target !== btn) return;
                 const modal = btn.closest('.modal-overlay');
                 modal.classList.remove('active');
-                // モーダルを閉じる時にタイピングアニメーションをリセット
                 const modalTitle = modal.querySelector('.modal-title span');
-                const originalText = modalTitle.parentElement.dataset.textContainer;
-                modalTitle.textContent = JSON.parse(originalText).querySelector('span').textContent;
+                if(modalTitle && modalTitle.parentElement.dataset.textContainer) {
+                    const originalText = modalTitle.parentElement.dataset.textContainer;
+                    modalTitle.textContent = JSON.parse(originalText).querySelector('span').textContent;
+                }
             });
         });
-
-        // スクロールアニメーション
         const observer = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -193,16 +204,9 @@
                 }
             });
         }, { threshold: 0.1 });
-        
-        // ★★★ HTML構造の変更に伴う微調整 ★★★
         document.querySelectorAll('.fade-in, #contents .section-title-wrapper').forEach(el => observer.observe(el));
-        // 元のテキストをdata属性に保存
         document.querySelectorAll('[data-text-container]').forEach(el => {
            el.dataset.textContainer = JSON.stringify(el.innerHTML);
-        });
-    </script>
-</body>
-</html>
         });
     </script>
 </body>
