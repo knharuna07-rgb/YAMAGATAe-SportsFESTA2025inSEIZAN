@@ -22,8 +22,18 @@
         header nav a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background-color: var(--primary-blue); transition: width 0.3s; }
         header nav a:hover::after { width: 100%; }
         main { padding-top: 60px; }
-        .main-visual { margin-top: -60px; line-height: 0; opacity: 0; transform: scale(1.05); transition: opacity 1.2s ease-out, transform 1.2s ease-out; position: relative; }
-        .main-visual::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, var(--base-bg) 0%, rgba(16,16,16,0) 50%); }
+        
+        .main-visual {
+            margin-top: -60px;
+            line-height: 0;
+            opacity: 0;
+            transform: scale(1.05);
+            transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+            position: relative;
+        }
+        /* メイン画像下のぼかしを削除 */
+        /* .main-visual::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, var(--base-bg) 0%, rgba(16,16,16,0) 50%); } */
+        
         .main-visual.visible { opacity: 1; transform: scale(1); }
         .main-visual img { width: 100%; height: auto; display: block; }
         .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s, transform 0.8s; }
@@ -50,16 +60,23 @@
         .card-text { font-size: 1em; line-height: 1.6; color: var(--text-secondary); }
         .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 2000; display: flex; justify-content: center; align-items: center; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
         .modal-overlay.active { opacity: 1; pointer-events: auto; }
-        .modal-content { background-color: var(--content-bg); border-radius: 10px; width: 90%; max-width: 800px; max-height: 80vh; padding: 40px; overflow-y: auto; transform: scale(0.95); transition: transform 0.3s; }
+        .modal-content { position: relative; background-color: var(--content-bg); border-radius: 10px; width: 90%; max-width: 800px; max-height: 80vh; padding: 40px; overflow-y: auto; transform: scale(0.95); transition: transform 0.3s; }
         .modal-overlay.active .modal-content { transform: scale(1); }
-        .modal-close { position: absolute; top: 20px; right: 20px; font-size: 2em; color: white; cursor: pointer; border: none; background: none; }
+        .modal-close { position: absolute; top: 20px; right: 20px; font-size: 2em; color: white; cursor: pointer; border: none; background: none; z-index: 10; }
         .modal-title { font-size: 2.5em; margin-top: 0; min-height: 1.2em; }
         .modal-title span { color: var(--accent-pink); }
         .modal-title.typing::after { content: '|'; animation: blink 1s step-end infinite; color: var(--accent-pink); }
         #sponsors { background-color: var(--content-bg); }
         .logo-container { display: flex; justify-content: center; align-items: center; gap: 40px; margin-top: 30px; flex-wrap: wrap; }
-        .logo-container img { max-height: 60px; max-width: 180px; filter: brightness(0) invert(1) opacity(0.7); transition: 0.3s; }
-        .logo-container img:hover { filter: none; }
+        
+        .logo-container img {
+            max-height: 60px;
+            max-width: 180px;
+            /* スポンサーロゴを常にカラー表示 */
+            filter: none;
+            opacity: 0.9;
+        }
+
         .sub-section-title { text-align: center; font-size: 1.2em; color: var(--text-secondary); margin-top: 60px; letter-spacing: 2px; }
         footer { background-color: var(--accent-pink); color: white; text-align: center; padding: 30px 20px; margin-bottom: 40px; }
         .contact-info { line-height: 1.8; margin-bottom: 20px; }
@@ -67,6 +84,7 @@
         .marquee-inner { display: inline-block; padding-left: 100%; animation: marquee-anim 25s linear infinite; }
         .marquee-inner span { padding: 10px 20px; font-weight: bold; display: inline-block; }
         @keyframes marquee-anim { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
+        
         @media (max-width: 768px) {
             header nav { display: none; }
             .section-title, .info-item p, .prize-text { font-size: 1.8em; }
@@ -76,7 +94,6 @@
     </style>
 </head>
 
-<!-- ★★★ ここからが修正したHTMLの本体です ★★★ -->
 <body>
     <div id="loader"><p>YAMAGATA e-Sports Festa 2025 in SEIZAN</p></div>
 
@@ -87,7 +104,7 @@
 
     <main>
         <section class="main-visual">
-            <img src="やまがたeスポーツフェスタ-2025-in-SEIZAN案8.jpg" alt="やまがたeスポーツフェスタ2025 メインビジュアル">
+            <img src="やまがたeスポーツフェスタ-2025-in-SEIZAN案16修正.jpg" alt="やまがたeスポーツフェスタ2025 メインビジュアル">
         </section>
 
         <section id="info" class="section">
@@ -105,13 +122,13 @@
         <section id="contents" class="section">
             <div class="section-title-wrapper"><h2 class="section-title typing-anim" data-text-container><span>CONTENTS</span></h2></div>
             <div class="card-container">
-                <div class="card fade-in" data-modal="valorant-modal"><img src="valorant.jpg" alt="VALORANT大会"><div class="card-content"><h3 class="card-title">VALORANT 大会</h3><p class="card-text">中高生限定チーム対抗戦。地域の頂点を目指せ！</p></div></div>
+                <div class="card fade-in" data-modal="valorant-modal"><img src="Beta Key Art_VALORANT.jpg" alt="VALORANT大会"><div class="card-content"><h3 class="card-title">VALORANT 大会</h3><p class="card-text">中高生限定チーム対抗戦。地域の頂点を目指せ！</p></div></div>
                 <div class="card fade-in" data-modal="sf6-modal"><img src="SF6_Official_Keyart_16x9_Horizontal (1).png" alt="ストリートファイター6 体験"><div class="card-content"><h3 class="card-title">Street Fighter 6 体験</h3><p class="card-text">最新の格闘ゲームを体験。対戦台で腕試し！</p></div></div>
                 <div class="card fade-in" data-modal="puyo-modal"><img src="IMG_1087.JPG" alt="ぷよぷよeスポーツ 体験"><div class="card-content"><h3 class="card-title">ぷよぷよeスポーツ 体験</h3><p class="card-text">世代を超えて楽しめるパズルゲームで大連鎖！</p></div></div>
                 <div class="card fade-in" data-modal="vr-modal"><img src="IMG_1058.JPG" alt="山形大学VR部 体験"><div class="card-content"><h3 class="card-title">山形大学VR部 体験</h3><p class="card-text">非日常の世界へ。最新のVRコンテンツを体験！</p></div></div>
             </div>
         </section>
-        
+
         <section id="sponsors">
             <div class="section-title-wrapper"><h2 class="section-title"><span>SPONSORS & SUPPORTERS</span></h2></div>
             <h3 class="sub-section-title">SPONSORS</h3>
@@ -120,10 +137,7 @@
                 <img src="og.jpg" alt="すらら">
             </div>
             <h3 class="sub-section-title">SUPPORTERS</h3>
-            <div class="logo-container">
-                <p>山形市</p>
-                <p>TUYテレビユー山形</p>
-            </div>
+            <div class="logo-container"><p>山形市</p><p>TUYテレビユー山形</p></div>
         </section>
     </main>
     
@@ -152,6 +166,7 @@
             document.getElementById('loader').classList.add('hidden');
             document.querySelector('.main-visual').classList.add('visible');
         });
+
         const typeAnimation = (element) => {
             const targetSpan = element.querySelector('span');
             if (!targetSpan) return;
@@ -169,31 +184,32 @@
                 }
             }, 100);
         };
+
         const cards = document.querySelectorAll('.card');
         cards.forEach(card => {
             card.addEventListener('click', () => {
                 const modalId = card.dataset.modal;
                 const modal = document.getElementById(modalId);
                 modal.classList.add('active');
+                
                 const modalTitle = modal.querySelector('.modal-title');
                 if (modalTitle) {
+                    const originalHTML = JSON.parse(modalTitle.dataset.textContainer);
+                    modalTitle.innerHTML = originalHTML;
                     typeAnimation(modalTitle);
                 }
             });
         });
+
         const closeButtons = document.querySelectorAll('.modal-close, .modal-overlay');
         closeButtons.forEach(btn => {
             btn.addEventListener('click', (e) => {
                 if (e.target !== btn) return;
                 const modal = btn.closest('.modal-overlay');
                 modal.classList.remove('active');
-                const modalTitle = modal.querySelector('.modal-title span');
-                if(modalTitle && modalTitle.parentElement.dataset.textContainer) {
-                    const originalText = modalTitle.parentElement.dataset.textContainer;
-                    modalTitle.textContent = JSON.parse(originalText).querySelector('span').textContent;
-                }
             });
         });
+
         const observer = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -204,7 +220,9 @@
                 }
             });
         }, { threshold: 0.1 });
+        
         document.querySelectorAll('.fade-in, #contents .section-title-wrapper').forEach(el => observer.observe(el));
+        
         document.querySelectorAll('[data-text-container]').forEach(el => {
            el.dataset.textContainer = JSON.stringify(el.innerHTML);
         });
