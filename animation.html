@@ -31,7 +31,6 @@
             transition: opacity 1.2s ease-out, transform 1.2s ease-out;
             position: relative;
         }
-        /* メイン画像下のぼかしを削除 */
         /* .main-visual::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, var(--base-bg) 0%, rgba(16,16,16,0) 50%); } */
         
         .main-visual.visible { opacity: 1; transform: scale(1); }
@@ -66,17 +65,18 @@
         .modal-title { font-size: 2.5em; margin-top: 0; min-height: 1.2em; }
         .modal-title span { color: var(--accent-pink); }
         .modal-title.typing::after { content: '|'; animation: blink 1s step-end infinite; color: var(--accent-pink); }
+        
+        .modal-section { margin-bottom: 40px; }
+        .modal-section h3 { font-size: 1.8em; color: var(--primary-blue); border-bottom: 2px solid var(--primary-blue); padding-bottom: 10px; margin-top: 40px; margin-bottom: 20px; }
+        .modal-section p, .modal-section li { line-height: 1.8; color: var(--text-secondary); }
+        .modal-section ul { padding-left: 20px; }
+        .modal-section strong { color: var(--text-primary); font-weight: bold; }
+        .btn { display: inline-block; background-color: var(--accent-pink); color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background-color 0.3s; text-align: center; margin-top: 10px; }
+        .btn:hover { background-color: #c53249; }
+
         #sponsors { background-color: var(--content-bg); }
         .logo-container { display: flex; justify-content: center; align-items: center; gap: 40px; margin-top: 30px; flex-wrap: wrap; }
-        
-        .logo-container img {
-            max-height: 60px;
-            max-width: 180px;
-            /* スポンサーロゴを常にカラー表示 */
-            filter: none;
-            opacity: 0.9;
-        }
-
+        .logo-container img { max-height: 60px; max-width: 180px; filter: none; opacity: 0.9; }
         .sub-section-title { text-align: center; font-size: 1.2em; color: var(--text-secondary); margin-top: 60px; letter-spacing: 2px; }
         footer { background-color: var(--accent-pink); color: white; text-align: center; padding: 30px 20px; margin-bottom: 40px; }
         .contact-info { line-height: 1.8; margin-bottom: 20px; }
@@ -104,7 +104,7 @@
 
     <main>
         <section class="main-visual">
-            <img src="やまがたeスポーツフェスタ-2025-in-SEIZAN案16修正.jpg" alt="やまがたeスポーツフェスタ2025 メインビジュアル">
+            <img src="main-visual.jpg" alt="やまがたeスポーツフェスタ2025 メインビジュアル">
         </section>
 
         <section id="info" class="section">
@@ -146,7 +146,7 @@
             <h3>CONTACT</h3>
             <p>惺山高等学校e-Sports部 eスポーツフェスタ 生徒実行委員会<br>〒990-0832 山形市城西３丁目１３－７<br>代表TEL: 023-643-0321</p>
         </div>
-        <p>&copy; 2025 やまがたeスポーツフェスタ実行委員会</p>
+        <p>&copy; 惺山高等学校e-Sports部やまがたeスポーツフェスタ実行委員会</p>
     </footer>
 
     <div class="marquee">
@@ -156,10 +156,158 @@
         </div>
     </div>
 
-    <div id="valorant-modal" class="modal-overlay"><div class="modal-content"><button class="modal-close">&times;</button><h2 class="modal-title" data-text-container><span>VALORANT 大会 詳細</span></h2><p>ここにVALORANT大会の詳細なルール、参加資格、エントリー方法などを記載します。</p></div></div>
-    <div id="sf6-modal" class="modal-overlay"><div class="modal-content"><button class="modal-close">&times;</button><h2 class="modal-title" data-text-container><span>Street Fighter 6 体験 詳細</span></h2><p>ここにスト6体験コーナーでできること、使用できるキャラクター、初心者講習会の時間などを記載します。</p></div></div>
-    <div id="puyo-modal" class="modal-overlay"><div class="modal-content"><button class="modal-close">&times;</button><h2 class="modal-title" data-text-container><span>ぷよぷよeスポーツ 体験 詳細</span></h2><p>ここにぷよぷよ体験コーナーの詳細などを記載します。</p></div></div>
-    <div id="vr-modal" class="modal-overlay"><div class="modal-content"><button class="modal-close">&times;</button><h2 class="modal-title" data-text-container><span>山形大学VR部 体験 詳細</span></h2><p>ここにVR体験の詳細などを記載します。</p></div></div>
+    <div id="valorant-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h2 class="modal-title" data-text-container><span>VALORANT 大会 詳細</span></h2>
+
+            <div class="modal-section">
+                <h3>１．スケジュール</h3>
+                <p><strong>＜中学生・高校生Valorant No.１決定戦＞</strong></p>
+                <ul>
+                    <li><strong>エントリー期間:</strong> 9月16日(月) 〜 10月20日(月) 23:59</li>
+                    <li><strong>予選のご案内:</strong> 10月20日(月)までに代表者メールアドレスに送付</li>
+                    <li><strong>オンライン予選:</strong> 10月25日(土) 10:00以降（ベスト４を決定）</li>
+                    <li><strong>予選予備日:</strong> 10月26日(日)</li>
+                    <li><strong>本戦受付:</strong> 11月2日(日) 10:00-10:30 @ 惺山高校第一体育館 特設ステージ</li>
+                </ul>
+                <p><strong>＜一般参加の部＞</strong></p>
+                <ul>
+                    <li>可能な限り事前エントリーをお願いします。</li>
+                    <li>当日参加は11月2日 10:00-10:30に受付します。※申込数により受付できない場合があります。</li>
+                </ul>
+            </div>
+
+            <div class="modal-section">
+                <h3>２．使用タイトル</h3>
+                <ul>
+                    <li><strong>ゲームタイトル:</strong> VALORANT</li>
+                    <li><strong>プラットフォーム:</strong> PC</li>
+                </ul>
+            </div>
+
+            <div class="modal-section">
+                <h3>３．エントリーについて</h3>
+                <p><strong>＜中学生の部＞</strong></p>
+                <a href="https://forms.gle/79NDdCitL43tJfpi6" target="_blank" class="btn">中学生の部 申込フォーム</a>
+                <ul>
+                    <li>エントリーには保護者の承諾が必要です。</li>
+                    <li>学校・地域の枠を超えたチーム編成を歓迎します。</li>
+                    <li>チーム代表者の連絡先メールアドレス、及びチーム全員のDiscord IDをご用意ください。</li>
+                    <li>Playerネームの規約を遵守してください。（ヘイトスピーチ、中傷、著作権を侵害する名前等はNG）</li>
+                </ul>
+
+                <p><strong>＜高校生の部＞</strong></p>
+                <a href="https://forms.gle/hUZ5JLV5imC7AbsYA" target="_blank" class="btn">高校生の部 申込フォーム</a>
+                <ul>
+                    <li>エントリーには保護者の承諾が必要です。</li>
+                    <li>学校・地域の枠を超えたチーム編成を歓迎します。</li>
+                    <li>チーム代表者の連絡先メールアドレス、及びチーム全員のDiscord IDをご用意ください。</li>
+                    <li>Playerネームの規約を遵守してください。</li>
+                </ul>
+                
+                <p><strong>＜一般の部＞</strong></p>
+                <a href="https://forms.gle/RgxdhK2TsnTmNzeV8" target="_blank" class="btn">一般の部 申込フォーム</a>
+                <ul>
+                    <li>5名未満の場合、当日チームメンバーをアレンジする場合があります。</li>
+                    <li>チーム代表者の連絡先メールアドレス、及びチーム全員のDiscord IDをご用意ください。</li>
+                    <li>Playerネームの規約を遵守してください。</li>
+                </ul>
+            </div>
+            
+            <div class="modal-section">
+                <h3>４．予選について</h3>
+                <p><strong>＜中学生の部・高校生の部共通＞</strong></p>
+                 <ul>
+                    <li>各部門で予選・本戦を行い、No.1チームを決定します。</li>
+                    <li>オンライン予選ではBest４までを決定。それ以降は11月2日の本戦会場で実施します。</li>
+                    <li>形式はシングルエリミネーションのトーナメント形式です。</li>
+                    <li>マッチ形式はBo1、サーバーはTokyo1、マップはランダムに決定します。</li>
+                    <li>コミュニケーションにはDiscordを使用します。</li>
+                </ul>
+            </div>
+
+             <div class="modal-section">
+                <h3>５．本戦について</h3>
+                 <ul>
+                    <li>ベスト４以上の試合を惺山高等学校で行います。</li>
+                    <li>11月2日 10:00-10:30に受付。学生証を持参してください（服装は自由）。</li>
+                    <li>イベントの様子はYoutube等で配信・掲載される場合があります。</li>
+                </ul>
+            </div>
+            
+            <div class="modal-section">
+                <h3>６．使用機材</h3>
+                 <ul>
+                    <li>オンライン予選は各自で機材をご準備ください。</li>
+                    <li>本戦会場では、高性能なPC及びデバイス（マウス、キーボード等）を準備します。</li>
+                    <li>各自のデバイスの持ち込みも可能ですが、接続の不具合については自己責任でお願いします。</li>
+                </ul>
+            </div>
+
+            <div class="modal-section">
+                <h3>７．当日のタイムスケジュール（予定）</h3>
+                 <ul>
+                    <li><strong>10:45~ :</strong> 中学生・高校生 準決勝</li>
+                    <li><strong>12:45~ :</strong> 中学生・高校生 決勝</li>
+                    <li><strong>13:45~ :</strong> エキシビションマッチ</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="sf6-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h2 class="modal-title" data-text-container><span>Street Fighter 6 体験会・対戦会 詳細</span></h2>
+            
+            <div class="modal-section">
+                <h3>〜初心者も、経験者もストリートファイターを楽しもう！〜</h3>
+                <p>最高の環境で自由にプレーをお楽しみください。</p>
+                <ul>
+                    <li><strong>時間:</strong> 11月2日(日) 10:45より体験会開始 / 12:45より対戦会開始</li>
+                    <li><strong>エントリー:</strong> 当日10:30より随時受付。体験会は参加自由です。</li>
+                    <li><strong>機材:</strong> PC5台、アーケードコントローラー4台、ゲームコントローラーを準備。デバイスの持ち込みも可能です。</li>
+                    <li><strong>対戦会ルール:</strong> ランク無制限台とマスター未到達台を設置。2本先取の勝ち残り形式（3連勝制限あり）。</li>
+                    <li><strong>トーナメント:</strong> 対戦会後に参加者によるトーナメントを開催！(2本先取、準決/決勝は3本/5本先取)</li>
+                </ul>
+                 <p>※参加者多数の場合、エントリーを中断することがございます。可能な限り事前エントリーにご協力ください。</p>
+            </div>
+        </div>
+    </div>
+    
+    <div id="puyo-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h2 class="modal-title" data-text-container><span>ぷよぷよeスポーツ 体験 詳細</span></h2>
+            
+            <div class="modal-section">
+                <h3>いつでも、誰でも、ぷよ勝負！</h3>
+                <p>
+                    世代や経験を問わず、誰もが楽しめる国民的パズルゲーム「ぷよぷよ」の体験コーナーです。<br>
+                    友達と、家族と、初めて会った人と。大連鎖の爽快感を味わいながら、気軽にeスポーツに触れてみませんか？<br>
+                    <strong>開催時間中、いつでも好きな時に参加できます。年齢制限もありません！</strong>
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <div id="vr-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h2 class="modal-title" data-text-container><span>山形大学VR部 体験 詳細</span></h2>
+            
+            <div class="modal-section">
+                <h3>仮想世界への扉が、ここに。</h3>
+                <p>
+                    山形大学VR部の協力により、最新のVR（バーチャルリアリティ）体験ブースが登場！<br>
+                    ヘッドセットを装着すれば、そこはもう別世界。ゲームの世界に入り込んだり、非日常の絶景を旅したり。<br>
+                    ここでしかできない、驚きと感動の体験があなたを待っています。<br>
+                    <strong>開催時間中、いつでも気軽に体験可能です！</strong>
+                </p>
+            </div>
+        </div>
+    </div>
 
     <script>
         window.addEventListener('load', () => {
