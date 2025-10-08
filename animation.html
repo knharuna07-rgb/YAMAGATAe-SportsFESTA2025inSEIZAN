@@ -158,7 +158,11 @@
         <section id="sponsors">
             <div class="section-title-wrapper"><h2 class="section-title"><span>SPONSORS & SUPPORTERS</span></h2></div>
             <h3 class="sub-section-title">SPONSORS</h3>
-            <div class="logo-container"><img src="Thirdwave_Logo.png" alt="サードウェーブ社"><img src="og.jpg" alt="すらら"></div>
+            <div class="logo-container">
+                <img src="Thirdwave_Logo.png" alt="サードウェーブ社">
+                <img src="og.jpg" alt="すらら">
+                <img src="matsuki-ds-logo.png" alt="マツキドライビングスクール">
+            </div>
             <h3 class="sub-section-title">SUPPORTERS</h3>
             <div class="logo-container"><p>山形市</p><p>TUYテレビユー山形</p></div>
         </section>
@@ -237,7 +241,7 @@
                 else { clearInterval(timer); element.classList.remove('typing'); }
             }, 100);
         };
-
+        
         const clickableItems = document.querySelectorAll('.card, .redbull-promo');
         clickableItems.forEach(item => {
             item.addEventListener('click', () => {
