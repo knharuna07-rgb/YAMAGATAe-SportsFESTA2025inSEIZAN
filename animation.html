@@ -38,7 +38,7 @@
         .info-item { text-align: center; padding: 20px; }
         .info-item h3 { font-size: 1.2em; color: var(--text-secondary); margin: 0 0 10px 0; letter-spacing: 2px; }
         .info-item p { font-size: 2.5em; line-height: 1.4; margin: 0; font-weight: bold; }
-        .prize-section { padding: 60px 20px; background-color: var(--content-bg); text-align: center; }
+        .prize-section { padding: 60px 20px; background-color: var(--content-bg); text-align: center; position: relative; }
         .prize-text { font-size: 2.5em; font-weight: bold; color: var(--accent-pink); letter-spacing: 2px; }
         .prize-subtext { font-size: 1.2em; color: var(--text-secondary); margin-top: 15px; }
         .card-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
@@ -76,6 +76,11 @@
         .guest-credentials li { margin-bottom: 8px; }
         .guest-credentials a { color: var(--accent-pink); text-decoration: none; }
         .guest-credentials a:hover { text-decoration: underline; }
+        .redbull-promo { position: absolute; top: 20px; right: 5%; width: 180px; cursor: pointer; z-index: 10; }
+        .redbull-truck { width: 100%; height: auto; }
+        .speech-bubble { position: absolute; bottom: 60%; left: -80px; background-color: white; color: #101010; padding: 10px 15px; border-radius: 10px; font-weight: bold; font-size: 0.9em; width: 130px; text-align: center; animation: bounce 2s infinite ease-in-out; }
+        .speech-bubble::after { content: ''; position: absolute; bottom: -10px; right: 20px; border-width: 10px 10px 0 10px; border-style: solid; border-color: white transparent transparent transparent; }
+        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
         #sponsors { background-color: var(--content-bg); }
         .logo-container { display: flex; justify-content: center; align-items: center; gap: 40px; margin-top: 30px; flex-wrap: wrap; }
         .logo-container img { max-height: 60px; max-width: 180px; filter: none; opacity: 0.9; }
@@ -120,6 +125,13 @@
         <section class="prize-section fade-in">
             <p class="prize-text">優勝賞品あり！</p>
             <p class="prize-subtext">初心者・一般参加者飛び入り参戦　大歓迎！</p>
+            <div class="redbull-promo" data-modal="redbull-modal">
+                <div class="speech-bubble">翼、さずけに来る！</div>
+                <svg class="redbull-truck" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+                    <style>.truck-body { fill: #112543; } .truck-logo { fill: #FF1E1E; }</style>
+                    <g><rect x="0" y="20" width="130" height="60" rx="5" class="truck-body"/><path d="M 120,40 L 120,80 L 160,80 L 180,55 L 180,40 Z" class="truck-body"/><rect x="160" y="45" width="18" height="20" fill="rgba(255,255,255,0.2)"/><circle cx="25" cy="85" r="15" class="truck-body"/><circle cx="95" cy="85" r="15" class="truck-body"/><circle cx="155" cy="85" r="15" class="truck-body"/><circle cx="65" cy="50" r="25" class="truck-logo"/></g>
+                </svg>
+            </div>
         </section>
         
         <section id="contents" class="section">
@@ -133,103 +145,30 @@
         </section>
         
         <section id="guests" class="guest-section">
-            <div class="section-title-wrapper">
-                <h2 class="section-title"><span>GUEST CASTER</span></h2>
-            </div>
+            <div class="section-title-wrapper"><h2 class="section-title"><span>GUEST CASTER</span></h2></div>
             <div class="guest-grid">
-                <div class="guest-profile fade-in">
-                    <div class="guest-photo">
-                        <img src="ksin.jpg" alt="実況 けーしん">
-                    </div>
-                    <div class="guest-info">
-                        <p class="guest-role">実況 / Play-by-play Caster</p>
-                        <h3 class="guest-name">けーしん</h3>
-                        <p class="guest-bio">「言霊で試合を動かす」を信条とする、情熱的なeスポーツキャスター。元高校球児という経歴を活かし、スポーツ中継さながらの熱量で試合展開を一つの物語として描き出す。彼の言葉が、選手たちのスーパープレイを伝説に変える瞬間を、ぜひ会場で体感してください！</p>
-                         <div class="guest-credentials">
-                            <h4>所属</h4>
-                            <ul>
-                                <li>・Next GEN project 所属</li>
-                                <li>・株式会社REALIZE 提携</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="guest-profile fade-in">
-                    <div class="guest-photo">
-                        <img src="安達さん.jpg" alt="解説 安達 龍太郎">
-                    </div>
-                    <div class="guest-info">
-                        <p class="guest-role">解説 / Commentator</p>
-                        <h3 class="guest-name">安達 龍太郎</h3>
-                        <p class="guest-bio">OCA大阪でeスポーツイベントマネジメントを学ぶ2年生キャスター。先輩として培った豊富な経験と、持ち前の明るさで会場のボルテージを最高潮へと導きます。試合の展開をドラマティックに描き出す彼の言葉が、観る者すべてを熱狂の渦に巻き込みます！</p>
-                        <div class="guest-credentials">
-                            <h4>所属</h4>
-                            <ul>
-                                <li>・OCA大阪デザイン＆テクノロジー専門学校</li>
-                                <li>・e-sportsイベント・マネジメント専攻 2年</li>
-                            </ul>
-                             <h4>さらに詳しく</h4>
-                            <ul>
-                                <li><a href="https://lake-goal-2fe.notion.site/MC-5332c5ce80454995a9a918b735a85bbc" target="_blank">プロフィール詳細はこちら</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="guest-profile fade-in">
-                    <div class="guest-photo">
-                        <img src="スクリーンショット 2025-09-29 172035.png" alt="解説 福田 拓実">
-                    </div>
-                    <div class="guest-info">
-                        <p class="guest-role">解説 / Commentator</p>
-                        <h3 class="guest-name">福田 拓実</h3>
-                        <p class="guest-bio">OCA大阪で未来のeスポーツシーンを担うべく学ぶ1年生解説者。競技シーンへの深い洞察と、自らPremierで戦うプレイヤーとしての視点を融合させ、戦況を的確に言語化。初心者にも分かりやすく、上級者も唸らせる戦略的な解説で、試合の奥深さを伝えます！</p>
-                         <div class="guest-credentials">
-                            <h4>所属</h4>
-                            <ul>
-                                <li>・OCA大阪デザイン＆テクノロジー専門学校</li>
-                                <li>・e-sportsイベント・マネジメント専攻 1年</li>
-                            </ul>
-                            <h4>VALORANT Rank</h4>
-                            <ul>
-                                <li>・最高ランク：ダイヤモンド1</li>
-                                <li>・Premierランク：アドバンスド2</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                <div class="guest-profile fade-in"><div class="guest-photo"><img src="ksin.jpg" alt="実況 けーしん"></div><div class="guest-info"><p class="guest-role">実況 / Play-by-play Caster</p><h3 class="guest-name">けーしん</h3><p class="guest-bio">「言霊で試合を動かす」を信条とする、情熱的なeスポーツキャスター。元高校球児という経歴を活かし、スポーツ中継さながらの熱量で試合展開を一つの物語として描き出す。彼の言葉が、選手たちのスーパープレイを伝説に変える瞬間を、ぜひ会場で体感してください！</p><div class="guest-credentials"><h4>所属</h4><ul><li>・Next GEN project 所属</li><li>・株式会社REALIZE 提携</li></ul><h4>さらに詳しく</h4><ul><li><a href="https://lake-goal-2fe.notion.site/MC-5332c5ce80454995a9a918b735a85bbc" target="_blank">プロフィール詳細はこちら</a></li></ul></div></div></div>
+                <div class="guest-profile fade-in"><div class="guest-photo"><img src="安達さん.jpg" alt="解説 安達 龍太郎"></div><div class="guest-info"><p class="guest-role">解説 / Commentator</p><h3 class="guest-name">安達 龍太郎</h3><p class="guest-bio">OCA大阪でeスポーツイベントマネジメントを学ぶ2年生キャスター。先輩として培った豊富な経験と、持ち前の明るさで会場のボルテージを最高潮へと導きます。試合の展開をドラマティックに描き出す彼の言葉が、観る者すべてを熱狂の渦に巻き込みます！</p><div class="guest-credentials"><h4>所属</h4><ul><li>・OCA大阪デザイン＆テクノロジー専門学校</li><li>・e-sportsイベント・マネジメント専攻 2年</li></ul></div></div></div>
+                <div class="guest-profile fade-in"><div class="guest-photo"><img src="スクリーンショット 2025-09-29 172035.png" alt="解説 福田 拓実"></div><div class="guest-info"><p class="guest-role">解説 / Commentator</p><h3 class="guest-name">福田 拓実</h3><p class="guest-bio">OCA大阪で未来のeスポーツシーンを担うべく学ぶ1年生解説者。競技シーンへの深い洞察と、自らPremierで戦うプレイヤーとしての視点を融合させ、戦況を的確に言語化。初心者にも分かりやすく、上級者も唸らせる戦略的な解説で、試合の奥深さを伝えます！</p><div class="guest-credentials"><h4>所属</h4><ul><li>・OCA大阪デザイン＆テクノロジー専門学校</li><li>・e-sportsイベント・マネジメント専攻 1年</li></ul><h4>VALORANT Rank</h4><ul><li>・最高ランク：ダイヤモンド1</li><li>・Premierランク：アドバンスド2</li></ul></div></div></div>
             </div>
         </section>
 
         <section id="sponsors">
             <div class="section-title-wrapper"><h2 class="section-title"><span>SPONSORS & SUPPORTERS</span></h2></div>
             <h3 class="sub-section-title">SPONSORS</h3>
-            <div class="logo-container">
-                <img src="Thirdwave_Logo.png" alt="サードウェーブ社">
-                <img src="og.jpg" alt="すらら">
-            </div>
+            <div class="logo-container"><img src="Thirdwave_Logo.png" alt="サードウェーブ社"><img src="og.jpg" alt="すらら"></div>
             <h3 class="sub-section-title">SUPPORTERS</h3>
             <div class="logo-container"><p>山形市</p><p>TUYテレビユー山形</p></div>
         </section>
     </main>
     
     <footer id="contact">
-        <div class="contact-info">
-            <h3>CONTACT</h3>
-            <p>惺山高等学校e-Sports部 eスポーツフェスタ 生徒実行委員会<br>〒990-0832 山形市城西３丁目１３－７<br>代表TEL: 023-643-0321</p>
-        </div>
+        <div class="contact-info"><h3>CONTACT</h3><p>惺山高等学校e-Sports部 eスポーツフェスタ 生徒実行委員会<br>〒990-0832 山形市城西３丁目１３－７<br>代表TEL: 023-643-0321</p></div>
         <p>&copy; 2025 やまがたeスポーツフェスタ実行委員会</p>
     </footer>
 
-    <div class="marquee">
-        <div class="marquee-inner">
-            <span>YAMAGATA e-Sports Festa 2025.11.2sun</span><span>YAMAGATA e-Sports Festa 2025.11.2sun</span>
-            <span>YAMAGATA e-Sports Festa 2025.11.2sun</span><span>YAMAGATA e-Sports Festa 2025.11.2sun</span>
-        </div>
-    </div>
+    <div class="marquee"><div class="marquee-inner"><span>YAMAGATA e-Sports Festa 2025.11.2sun</span><span>YAMAGATA e-Sports Festa 2025.11.2sun</span><span>YAMAGATA e-Sports Festa 2025.11.2sun</span><span>YAMAGATA e-Sports Festa 2025.11.2sun</span></div></div>
 
-    <!-- ★★★★★★★ ここから下のコードが抜けていました ★★★★★★★ -->
     <div id="valorant-modal" class="modal-overlay">
         <div class="modal-content">
             <button class="modal-close">&times;</button>
@@ -248,7 +187,7 @@
     <div id="sf6-modal" class="modal-overlay">
         <div class="modal-content">
             <button class="modal-close">&times;</button><h2 class="modal-title" data-text-container><span>Street Fighter 6 体験会・対戦会 詳細</span></h2>
-            <div class="modal-section"><h3>〜初心者も、経験者もストリートファイターを楽しもう！〜</h3><p>最高の環境で自由にプレーをお楽しみください。</p><ul><li><strong>時間:</strong> 11月2日(日) 10:45より体験会開始 / 12:45より対戦会開始</li><li><strong>エントリー:</strong> 当日10:30より随時受付。体験会は参加自由です。</li><li><strong>機材:</strong> PC5台、アーケードコントローラー4台、ゲームコントローラーを準備。デバイスの持ち込みも可能です。</li><li><strong>対戦会ルール:</strong> ランク無制限台とマスター未到達台を設置。2本先取の勝ち残り形式（3連勝制限あり）。</li><li><strong>トーナメント:</strong> 対戦会後に参加者によるトーナメントを開催！(2本先取、準決/決勝は3本/5本先取)</li></ul><p>※参加者多数の場合、エントリーを中断することがございます。可能な限り事前エントリーにご協力ください。</p></div>
+            <div class="modal-section"><h3>〜初心者も、経験者もストリートファイターを楽しもう！〜</h3><p>最高の環境で自由にプレーをお楽しみください。</p><ul><li><strong>時間:</strong> 11月2日(日) 10:45より体験会開始 / 12:45より対戦会開始</li><li><strong>エントリー:</strong> 当日10:30より随時受付。体験会は参加自由です。</li><li><strong>機材:</strong> PC5台、アーケードコントローラー4台、ゲームコントローラーを準備。デバイスの持ち込みも可能です。</li><li><strong>対戦会ルール:</strong> ランク無制限台とマスター未到達台を設置。2本先取の勝ち残り形式（3連勝制限あり）。</li><li><strong>トーナメント:</strong> 対戦会後に参加者によるトーナメントを開催！(2本先取、準決/決勝は3本/5本先取)</li></ul>
         </div>
     </div>
     <div id="puyo-modal" class="modal-overlay">
@@ -261,6 +200,20 @@
         <div class="modal-content">
             <button class="modal-close">&times;</button><h2 class="modal-title" data-text-container><span>山形大学VR部 体験 詳細</span></h2>
             <div class="modal-section"><h3>仮想世界への扉が、ここに。</h3><p>山形大学VR部の協力により、最新のVR（バーチャルリアリティ）体験ブースが登場！<br>ヘッドセットを装着すれば、そこはもう別世界。ゲームの世界に入り込んだり、非日常の絶景を旅したり。<br>ここでしかできない、驚きと感動の体験があなたを待っています。<br><strong>開催時間中、いつでも気軽に体験可能です！</strong></p></div>
+        </div>
+    </div>
+    <div id="redbull-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h2 class="modal-title" data-text-container><span>Red Bullがやってくる！</span></h2>
+            <div class="modal-section">
+                <h3>あの"翼をさずける"トラックが惺山に登場！</h3>
+                <p>当日は、大量のRed Bullを搭載したオフィシャルトラックが会場に来場決定！<br>エナジーをチャージして、最高のパフォーマンスを発揮しよう！</p>
+                <ul>
+                    <li><strong>イベント参加者にはRed Bullをプレゼント！</strong>（※数に限りがあります）</li>
+                    <li>トラックとの記念撮影も可能！最高の思い出を作ろう！</li>
+                </ul>
+            </div>
         </div>
     </div>
 
@@ -287,16 +240,17 @@
                 }
             }, 100);
         };
-
-        const cards = document.querySelectorAll('.card');
-        cards.forEach(card => {
-            card.addEventListener('click', () => {
-                const modalId = card.dataset.modal;
+        
+        const clickableItems = document.querySelectorAll('.card, .redbull-promo');
+        clickableItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const modalId = item.dataset.modal;
+                if (!modalId) return;
                 const modal = document.getElementById(modalId);
                 modal.classList.add('active');
                 
                 const modalTitle = modal.querySelector('.modal-title');
-                if (modalTitle) {
+                if (modalTitle && modalTitle.dataset.textContainer) {
                     const originalHTML = JSON.parse(modalTitle.dataset.textContainer);
                     modalTitle.innerHTML = originalHTML;
                     typeAnimation(modalTitle);
