@@ -223,6 +223,7 @@
         </div>
     </div>
 
+<!-- ★★★ このscriptタグをまるごと貼り付け ★★★ -->
     <script>
         window.addEventListener('load', () => {
             document.getElementById('loader').classList.add('hidden');
@@ -242,6 +243,7 @@
             }, 100);
         };
         
+        // ★★★ ここの定義が修正されています！ ★★★
         const clickableItems = document.querySelectorAll('.card, .redbull-promo');
         clickableItems.forEach(item => {
             item.addEventListener('click', () => {
