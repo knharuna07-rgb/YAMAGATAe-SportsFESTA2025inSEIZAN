@@ -390,6 +390,49 @@
         document.querySelectorAll('[data-text-container]').forEach(el => {
            el.dataset.textContainer = JSON.stringify(el.innerHTML);
         });
+
+        const clickableItems = document.querySelectorAll('.card, .redbull-promo');
+        clickableItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const modalId = item.dataset.modal;
+                if (!modalId) return;
+                const modal = document.getElementById(modalId);
+                modal.classList.add('active');
+                
+                const modalTitle = modal.querySelector('.modal-title');
+                if (modalTitle && modalTitle.dataset.textContainer) {
+                    const originalHTML = JSON.parse(modalTitle.dataset.textContainer);
+                    modalTitle.innerHTML = originalHTML;
+                    typeAnimation(modalTitle);
+                }
+            });
+        });
+
+        const closeButtons = document.querySelectorAll('.modal-close, .modal-overlay');
+        closeButtons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                if (e.target !== btn) return;
+                const modal = btn.closest('.modal-overlay');
+                modal.classList.remove('active');
+            });
+        });
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    const title = entry.target.querySelector('.typing-anim');
+                    if (title) typeAnimation(title);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        document.querySelectorAll('.fade-in, #contents .section-title-wrapper').forEach(el => observer.observe(el));
+        
+        document.querySelectorAll('[data-text-container]').forEach(el => {
+           el.dataset.textContainer = JSON.stringify(el.innerHTML);
+        });
     </script>
 </body>
 </html>
