@@ -35,8 +35,8 @@
         @keyframes blink { 50% { opacity: 0; } }
         .info-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
         .info-item { text-align: center; padding: 20px; }
-        .info-item h3 { font-size: 1.2em; color: var(--text-secondary); margin: 0 0 10px 0; letter-spacing: 2px; }
-        .info-item p { font-size: 2.5em; line-height: 1.4; margin: 0; font-weight: bold; color: var(--accent-pink); /* ★★★ 色を修正 ★★★ */ }
+        .info-item h3 { font-size: 1.2em; color: var(--accent-pink); margin: 0 0 10px 0; letter-spacing: 2px; /* ★★★ 「日時」「場所」の文字色を修正 ★★★ */ }
+        .info-item p { font-size: 2.5em; line-height: 1.4; margin: 0; font-weight: bold; color: var(--text-primary); /* ★★★ 日時・場所の内容の文字色を修正 ★★★ */ }
         .prize-section { padding: 60px 20px; background-color: var(--content-bg); text-align: center; position: relative; }
         .prize-text { font-size: 2.5em; font-weight: bold; color: var(--accent-pink); letter-spacing: 2px; }
         .prize-subtext { font-size: 1.2em; color: var(--text-secondary); margin-top: 15px; }
@@ -97,7 +97,8 @@
             .section-title, .info-item p, .prize-text { font-size: 1.8em; }
             .info-grid { grid-template-columns: 1fr; }
             .card-container { grid-template-columns: 1fr; }
-            .main-visual img { height: 100vh; width: 100%; object-fit: cover; object-position: center top; }
+            /* ★★★ スマホでのメイン画像の見切れを修正（高さを自動に） ★★★ */
+            .main-visual img { height: auto; }
             .redbull-promo { width: 120px; top: 10px; right: 10px; }
             .speech-bubble { width: 90px; padding: 5px 8px; font-size: 0.7em; left: -40px; bottom: 70%; }
             .speech-bubble::after { right: 15px; bottom: -8px; }
@@ -263,7 +264,7 @@
                 <p><strong>＜一般参加の部＞</strong></p>
                 <ul>
                     <li>可能な限り事前エントリーをお願いします。</li>
-                    <li>当日参加は11月2日 10:00-10:30に受付します。</li>
+                    <li>当日参加は11月2日 10:00-10:30に受付します。※申込数により受付できない場合があります。</li>
                 </ul>
             </div>
             <div class="modal-section">
@@ -354,7 +355,7 @@
                 </p>
                 <ul>
                     <li><strong>イベント参加者にはRed Bullをプレゼント！</strong>（※数に限りがあります）</li>
-                    <li>購買部で販売も！飲んで食べて、最高の思い出を作ろう！</li>
+                    <li>購買部での販売もあり！飲んで食べて、最高の思い出を作ろう！</li>
                 </ul>
             </div>
         </div>
